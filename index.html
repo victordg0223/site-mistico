@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Magia e Cura - Consultas místicas e produtos naturais">
+    <title>Magia e Cura - Sabedoria Ancestral</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🌙 Magia e Cura</h1>
+                    <p class="tagline">Sabedoria Ancestral</p>
+                </div>
+                <nav class="header-nav">
+                    <a href="index.html">Início</a>
+                    <a href="produtos.html">Produtos</a>
+                    <a href="#contato">Contato</a>
+                    <div class="cart-icon" onclick="toggleCart()">
+                        🛒 <span id="cart-count">0</span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Bem-vindo ao Magia e Cura</h2>
+                <p>Conecte-se com a sabedoria ancestral através de consultas e produtos místicos</p>
+                <div class="hero-icons">
+                    <span>✨</span><span>🔮</span><span>🌿</span><span>🌟</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="produtos">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços e Produtos</h2>
+            <div class="product-grid">
+                <!-- Produtos serão inseridos dinamicamente via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrinho Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: R$ <span id="cart-total">0,00</span></strong>
+            </div>
+            <button class="checkout-button" onclick="checkoutInfinitePay()">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
