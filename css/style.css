@@ -1,14 +1,12 @@
 :root {
-    --roxo-escuro: #6B46C1;
-    --roxo-claro: #8B5CF6;
-    --verde-escuro: #065F46;
-    --verde-medio: #047857;
-    --dourado: #F59E0B;
-    --dourado-escuro: #D97706;
+    --background-dark: #2c2a4a;
+    --background-light: #4f4c7a;
+    --primary: #9e8db8;
+    --accent: #f7d59c;
+    --text-light: #f2e9e4;
+    --text-dark: #333333;
     --branco: #FFFFFF;
     --cinza-claro: #F9FAFB;
-    --cinza-medio: #6B7280;
-    --preto: #111827;
 }
 
 * {
@@ -20,8 +18,8 @@
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
-    color: var(--preto);
-    background: linear-gradient(135deg, var(--roxo-escuro) 0%, var(--verde-escuro) 100%);
+    color: var(--text-light);
+    background: var(--background-dark);
     min-height: 100vh;
 }
 
@@ -33,13 +31,12 @@ body {
 
 /* Header */
 .header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: var(--background-light);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .header-content {
@@ -50,13 +47,13 @@ body {
 }
 
 .logo h1 {
-    color: var(--roxo-escuro);
+    color: var(--accent);
     font-size: 1.5rem;
     margin-bottom: 0.2rem;
 }
 
 .tagline {
-    color: var(--dourado-escuro);
+    color: var(--primary);
     font-size: 0.8rem;
     font-style: italic;
 }
@@ -69,34 +66,34 @@ body {
 
 .header-nav a {
     text-decoration: none;
-    color: var(--preto);
+    color: var(--text-light);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .header-nav a:hover {
-    color: var(--roxo-claro);
+    color: var(--accent);
 }
 
 .cart-icon {
     cursor: pointer;
-    background: var(--dourado);
+    background: var(--primary);
     padding: 0.5rem 1rem;
     border-radius: 25px;
-    color: white;
+    color: var(--text-dark);
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 .cart-icon:hover {
-    background: var(--dourado-escuro);
+    background: var(--accent);
     transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--roxo-escuro), var(--verde-escuro));
-    color: white;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    color: var(--text-light);
     text-align: center;
     padding: 8rem 0 4rem;
     margin-top: 80px;
@@ -133,14 +130,14 @@ body {
 
 /* Products Section */
 .products {
-    background: var(--branco);
+    background: var(--background-dark);
     padding: 4rem 0;
 }
 
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    color: var(--roxo-escuro);
+    color: var(--accent);
     margin-bottom: 3rem;
 }
 
@@ -152,17 +149,17 @@ body {
 }
 
 .product-card {
-    background: white;
+    background: var(--background-light);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .product-icon {
@@ -171,13 +168,13 @@ body {
 }
 
 .product-card h3 {
-    color: var(--roxo-escuro);
+    color: var(--accent);
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .product-description {
-    color: var(--cinza-medio);
+    color: var(--primary);
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
@@ -185,7 +182,7 @@ body {
 .product-price {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--dourado-escuro);
+    color: var(--accent);
     margin-bottom: 1.5rem;
 }
 
@@ -207,23 +204,23 @@ body {
 }
 
 .cart-button {
-    background: var(--roxo-claro);
-    color: white;
+    background: var(--primary);
+    color: var(--text-dark);
 }
 
 .cart-button:hover {
-    background: var(--roxo-escuro);
+    background: var(--accent);
     transform: translateY(-2px);
 }
 
 .buy-button {
-    background: var(--dourado);
-    color: white;
+    background: var(--accent);
+    color: var(--text-dark);
     display: inline-block;
 }
 
 .buy-button:hover {
-    background: var(--dourado-escuro);
+    background: var(--primary);
     transform: translateY(-2px);
 }
 
@@ -234,12 +231,13 @@ body {
     top: 0;
     width: 400px;
     height: 100vh;
-    background: white;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    background: var(--background-dark);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
     z-index: 2000;
     transition: right 0.3s ease;
     display: flex;
     flex-direction: column;
+    border-left: 1px solid var(--primary);
 }
 
 .cart-sidebar.open {
@@ -248,18 +246,21 @@ body {
 
 .cart-header {
     padding: 1.5rem;
-    border-bottom: 1px solid #e5e7eb;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--roxo-escuro);
-    color: white;
+    background: var(--background-light);
+    color: var(--accent);
+}
+
+.cart-header h3 {
+    color: var(--accent);
 }
 
 .close-cart {
     background: none;
     border: none;
-    color: white;
+    color: var(--text-light);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -270,16 +271,51 @@ body {
     overflow-y: auto;
 }
 
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: var(--background-light);
+    border-radius: 8px;
+}
+
+.cart-item-info h4 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cart-item-controls button {
+    background: var(--primary);
+    color: var(--text-dark);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cart-item-controls button:hover {
+    background: var(--accent);
+}
+
 .cart-footer {
     padding: 1.5rem;
-    border-top: 1px solid #e5e7eb;
-    background: var(--cinza-claro);
+    background: var(--background-light);
 }
 
 .checkout-button {
     width: 100%;
-    background: var(--dourado);
-    color: white;
+    background: var(--accent);
+    color: var(--text-dark);
     border: none;
     padding: 1rem;
     border-radius: 25px;
@@ -290,7 +326,7 @@ body {
 }
 
 .checkout-button:hover {
-    background: var(--dourado-escuro);
+    background: var(--primary);
 }
 
 /* Responsive Design */

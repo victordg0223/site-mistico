@@ -120,10 +120,10 @@ function atualizarCarrinho() {
                         <p>${produto.priceDisplay}</p>
                     </div>
                     <div class="cart-item-controls">
-                        <button onclick="alterarQuantidade('${produtoId}', -1)">-</button>
+                        <button onclick="alterarQuantidade('${produto.id}', -1)"><i class="fas fa-minus"></i></button>
                         <span>${carrinho[produtoId]}</span>
-                        <button onclick="alterarQuantidade('${produtoId}', 1)">+</button>
-                        <button onclick="removerDoCarrinho('${produtoId}')">🗑️</button>
+                        <button onclick="alterarQuantidade('${produto.id}', 1)"><i class="fas fa-plus"></i></button>
+                        <button onclick="removerDoCarrinho('${produto.id}')"><i class="fas fa-trash"></i></button>
                     </div>
                 </div>
             `;
