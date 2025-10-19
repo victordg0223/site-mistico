@@ -8,8 +8,7 @@ const PRODUTOS = [
         priceCents: 1500,
         priceDisplay: "R$ 15,00",
         description: "Consulte o oráculo cigano para orientações sobre amor, trabalho e vida pessoal.",
-        icon: "🔮",
-        directLink: "https://checkout.infinitepay.io/magiaecura?items=[{\"name\":\"1+Tiragem+Baralho+Cigano\",\"price\":1500,\"quantity\":1}]&redirect_url=https://magiaecura.com.br"
+        icon: "🔮"
     },
     {
         id: "kumbaya-sono",
@@ -17,8 +16,7 @@ const PRODUTOS = [
         priceCents: 1500,
         priceDisplay: "R$ 15,00",
         description: "Defumação especial para promover relaxamento e sono tranquilo.",
-        icon: "🌿",
-        directLink: "https://checkout.infinitepay.io/magiaecura?items=[{\"name\":\"Kumbaya+Raiz+do+Sono\",\"price\":1500,\"quantity\":1}]&redirect_url=https://magiaecura.com.br/"
+        icon: "🌿"
     }
 ];
 
@@ -30,6 +28,18 @@ document.addEventListener('DOMContentLoaded', function() {
     atualizarContadorCarrinho();
 });
 
+// Gerar link de compra direta
+function gerarLinkCompraDireta(produto) {
+    const item = [{
+        name: produto.name,
+        price: produto.priceCents,
+        quantity: 1
+    }];
+    const jsonString = JSON.stringify(item);
+    const encodedItems = encodeURIComponent(jsonString).replace(/%20/g, '+');
+    return `https://checkout.infinitepay.io/${INFINITEPAY_HANDLE}?items=${encodedItems}&redirect_url=${encodeURIComponent(REDIRECT_URL)}`;
+}
+
 // Carregar produtos dinamicamente
 function carregarProdutos() {
     const productGrid = document.querySelector('.product-grid');
@@ -38,6 +48,7 @@ function carregarProdutos() {
     productGrid.innerHTML = '';
     
     PRODUTOS.forEach(produto => {
+        const directLink = gerarLinkCompraDireta(produto);
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.innerHTML = `
@@ -49,7 +60,7 @@ function carregarProdutos() {
                 <button class="cart-button" onclick="adicionarAoCarrinho('${produto.id}')">
                     Adicionar ao Carrinho
                 </button>
-                <a href="${produto.directLink}" target="_blank" class="buy-button">
+                <a href="${directLink}" target="_blank" class="buy-button">
                     Comprar Agora
                 </a>
             </div>
