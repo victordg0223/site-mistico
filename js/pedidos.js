@@ -45,7 +45,7 @@ function exibirPedidos(pedidos) {
             <div class="order-card">
                 <div class="order-header">
                     <div class="order-id-date">
-                        <h3>Pedido #${pedido.id.slice(-8)}</h3>
+                        <h3>Pedido #${pedido.id.length > 8 ? pedido.id.slice(-8) : pedido.id}</h3>
                         <p class="order-date">${formatarData(pedido.data)}</p>
                     </div>
                     <div class="order-status ${statusClass}">

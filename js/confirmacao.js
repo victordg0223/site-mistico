@@ -33,11 +33,9 @@ function verificarStatusPagamento() {
         // Pagamento cancelado ou falhou
         mostrarMensagem('error');
     } else {
-        // Por padrão, se o usuário chegou nesta página, assumimos que está processando
-        // Mostrar loading por 2 segundos e depois mostrar sucesso
-        setTimeout(() => {
-            confirmarPagamento(pedido, transactionId || 'IP' + Date.now());
-        }, 2000);
+        // Sem parâmetros específicos - mostrar pendente
+        // O usuário deve aguardar confirmação ou entrar em contato
+        mostrarPendente(pedido);
     }
 }
 
