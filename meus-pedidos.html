@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Magia e Cura - Consultas místicas e produtos naturais">
-    <title>Magia e Cura - Sabedoria Ancestral</title>
+    <meta name="description" content="Meus Pedidos - Magia e Cura">
+    <title>Meus Pedidos - Magia e Cura</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -30,26 +30,24 @@
         </div>
     </header>
 
-    <section class="hero">
+    <main class="orders-page">
         <div class="container">
-            <div class="hero-content">
-                <h2>Bem-vindo ao Magia e Cura</h2>
-                <p>Conecte-se com a sabedoria ancestral através de consultas e produtos místicos</p>
-                <div class="hero-icons">
-                    <span>✨</span><span>🔮</span><span>🌿</span><span>🌟</span>
+            <h2 class="section-title">Meus Pedidos</h2>
+            <div class="orders-content">
+                <div id="orders-list">
+                    <!-- Pedidos serão carregados aqui -->
+                </div>
+                <div id="empty-orders" style="display: none;">
+                    <div class="empty-message">
+                        <i class="fas fa-shopping-bag" style="font-size: 4rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                        <h3>Você ainda não fez nenhum pedido</h3>
+                        <p>Explore nossos produtos e serviços místicos</p>
+                        <a href="index.html#produtos" class="btn-primary">Ver Produtos</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="products" id="produtos">
-        <div class="container">
-            <h2 class="section-title">Nossos Serviços e Produtos</h2>
-            <div class="product-grid">
-                <!-- Produtos serão inseridos dinamicamente via JS -->
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Carrinho Sidebar -->
     <div id="cart-sidebar" class="cart-sidebar">
@@ -69,5 +67,6 @@
     </div>
 
     <script src="js/app.js"></script>
+    <script src="js/pedidos.js"></script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confirmação de Pedido - Magia e Cura">
+    <title>Pedido Confirmado - Magia e Cura</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🌙 Magia e Cura</h1>
+                    <p class="tagline">Sabedoria Ancestral</p>
+                </div>
+                <nav class="header-nav">
+                    <a href="index.html">Início</a>
+                    <a href="produtos.html">Produtos</a>
+                    <a href="meus-pedidos.html" title="Meus Pedidos"><i class="fas fa-receipt"></i></a>
+                    <a href="#contato">Contato</a>
+                    <a href="conta.html" title="Minha Conta"><i class="fas fa-user"></i></a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="confirmation-page">
+        <div class="container">
+            <div class="confirmation-content">
+                <div id="loading-message" class="message-box">
+                    <div class="spinner"></div>
+                    <h2>Processando seu pedido...</h2>
+                    <p>Aguarde enquanto verificamos o status do pagamento.</p>
+                </div>
+
+                <div id="success-message" class="message-box" style="display: none;">
+                    <div class="success-icon">✓</div>
+                    <h2>Obrigado pela sua compra!</h2>
+                    <p>Seu pagamento foi confirmado com sucesso.</p>
+                    
+                    <div class="order-details">
+                        <h3>Detalhes do Pedido</h3>
+                        <div id="order-info"></div>
+                        <div class="order-total">
+                            <strong>Total:</strong> R$ <span id="order-total">0,00</span>
+                        </div>
+                    </div>
+
+                    <div class="next-steps">
+                        <h3>Próximos Passos</h3>
+                        <p>Você receberá um e-mail com os detalhes do seu pedido.</p>
+                        <p>Para consultas de Baralho Cigano, entraremos em contato em breve.</p>
+                        <p>Para produtos Kumbaya, seu pedido será processado e enviado.</p>
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> miwoadm@gmail.com</p>
+                            <p><i class="fas fa-phone"></i> <strong>Telefone:</strong> (11) 91199-3949</p>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <a href="index.html" class="btn-primary">Voltar para Início</a>
+                        <a href="index.html#produtos" class="btn-secondary">Ver Mais Produtos</a>
+                    </div>
+                </div>
+
+                <div id="error-message" class="message-box" style="display: none;">
+                    <div class="error-icon">✕</div>
+                    <h2>Erro ao processar pagamento</h2>
+                    <p>Não foi possível confirmar seu pagamento.</p>
+                    <p>Entre em contato conosco se você realizou o pagamento:</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> miwoadm@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> (11) 91199-3949</p>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="index.html" class="btn-primary">Voltar para Início</a>
+                    </div>
+                </div>
+
+                <div id="pending-message" class="message-box" style="display: none;">
+                    <div class="pending-icon">⏱</div>
+                    <h2>Pagamento Pendente</h2>
+                    <p>Seu pedido foi registrado, mas o pagamento ainda está pendente.</p>
+                    <p>Assim que o pagamento for confirmado, você receberá uma notificação.</p>
+                    <div class="order-details">
+                        <h3>Detalhes do Pedido</h3>
+                        <div id="pending-order-info"></div>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="index.html" class="btn-primary">Voltar para Início</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/confirmacao.js"></script>
+</body>
+</html>
