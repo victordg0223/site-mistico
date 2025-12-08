@@ -181,6 +181,18 @@ function checkoutInfinitePay() {
         return;
     }
 
+    // Salvar pedido no localStorage antes do checkout
+    const pedido = {
+        id: Date.now().toString(),
+        data: new Date().toISOString(),
+        itens: itensParaCheckout,
+        total: itensParaCheckout.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+        status: 'aguardando_pagamento'
+    };
+    
+    localStorage.setItem('pedido_pendente', JSON.stringify(pedido));
+    localStorage.setItem('carrinho_checkout', JSON.stringify(carrinho));
+
     const jsonString = JSON.stringify(itensParaCheckout);
     const encodedItems = encodeURIComponent(jsonString).replace(/%20/g, '+');
     const checkoutUrl = `https://checkout.infinitepay.io/${INFINITEPAY_HANDLE}?items=${encodedItems}&redirect_url=${encodeURIComponent(REDIRECT_URL)}`;
