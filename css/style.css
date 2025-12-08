@@ -600,6 +600,152 @@ body {
     padding: 2rem;
 }
 
+/* Orders Page */
+.orders-page {
+    padding: 8rem 0 4rem;
+    margin-top: 80px;
+    min-height: 80vh;
+}
+
+.orders-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.order-card {
+    background: var(--background-light);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--background-dark);
+}
+
+.order-id-date h3 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.order-date {
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.order-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.status-pago {
+    background: #10B981;
+    color: var(--branco);
+}
+
+.status-pendente {
+    background: #F59E0B;
+    color: var(--text-dark);
+}
+
+.status-icon {
+    font-size: 1.2rem;
+}
+
+.order-items-list {
+    margin-bottom: 1.5rem;
+}
+
+.order-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--background-dark);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.item-info strong {
+    color: var(--accent);
+}
+
+.item-quantity {
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.item-price {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.order-footer {
+    padding-top: 1rem;
+    border-top: 2px solid var(--background-dark);
+}
+
+.order-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.order-total-row strong {
+    color: var(--text-light);
+    font-size: 1.2rem;
+}
+
+.total-value {
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+.transaction-info {
+    color: var(--primary);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--background-light);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.empty-message h3 {
+    color: var(--accent);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.empty-message p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-content {
@@ -638,5 +784,25 @@ body {
     
     .btn-primary, .btn-secondary {
         width: 100%;
+    }
+    
+    .order-card {
+        padding: 1.5rem;
+    }
+    
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .order-item-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .item-price {
+        align-self: flex-end;
     }
 }
